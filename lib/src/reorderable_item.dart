@@ -1,3 +1,4 @@
+import 'dart:developer';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,7 @@ class ReorderableItemView extends StatefulWidget {
       rst.add(ReorderableItemView(
         key: child.key!,
         index: i,
-        indexInAll: i + (header?.length?? 0),
+        indexInAll: i + (header?.length ?? 0),
         child: child,
       ));
     }

@@ -69,7 +69,8 @@ class DragInfo extends Drag {
     // if (nav != null && nav.context.findRenderObject() != null && nav.context.findRenderObject() is RenderBox) {
     // zeroOffset = (nav.context.findRenderObject() as RenderBox).globalToLocal(Offset.zero);
     // why global to is is zero??
-    zeroOffset = (Overlay.of(context)?.context.findRenderObject() as RenderBox).globalToLocal(Offset.zero);
+    zeroOffset = (Overlay.of(context)?.context.findRenderObject() as RenderBox)
+        .globalToLocal(Offset.zero);
     debug("zeroOffset $zeroOffset");
     // }
 
@@ -121,10 +122,7 @@ class DragInfo extends Drag {
         height: itemSize.height,
         child: dragWidgetBuilder != null
             ? dragWidgetBuilder!(index, child)
-            : Material(
-                elevation: 3.0,
-                child: child,
-              ),
+            : child,
       ),
     );
   }
